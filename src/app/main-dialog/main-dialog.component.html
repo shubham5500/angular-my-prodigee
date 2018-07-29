@@ -1,0 +1,353 @@
+
+<!-- Dialog -->
+<div *ngIf="data.body">
+    <h4 mat-dialog-title>
+        {{data.title}}
+    </h4>
+    <mat-dialog-content>
+      <!-- <h4>{{data.description}}</h4> -->
+      <div [innerHTML]="data.body"></div>
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end" class="danger_btn">
+      <button *ngIf="data.pdf" color="primary" mat-button (click)="onViewDocument(data.pdf)">View Document</button>
+      <button color="accent" mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+</div>
+
+<!-- show pdf in dialog -->
+<div *ngIf="data.pdfData" class="iframe-upper-div">
+  <div *ngIf="loading" class="loading">
+    <span><img src="./assets/icons/ring.gif" alt=""></span>
+  </div>
+
+  <div class="iframe-div">
+    <iframe id="my-iframe" height="100%" name="iframess" #iframe [src]="pdfData" (load)="onLoadIframe()"  frameborder="0" scrolling="no" width="100%" ></iframe>
+    <div class="inner-iframe-div"></div>
+  </div>
+  <mat-dialog-actions align="end" class="danger_btn">
+    <button color="accent" mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</div>
+
+<!-- Quiz Detail Dialog -->
+<div *ngIf="data.quiz_name">
+    <p mat-dialog-title>
+        Quiz Detail
+    </p>
+    <p class="m-0 text-center">
+        <span>
+          <img class="quiz_dialog_logo"
+              src="http://demo.hackerkernel.com/prodigee-test/{{data.quiz_logo}}"
+              onerror="this.src = '/assets/icons/quiz-logo-error.png'" ></span>
+    </p>
+    <mat-dialog-content>
+      <ul class="p-0">
+        <li>Time given to attempt the quiz : <span class="float-right">{{data.time}} min</span></li>
+        <li>Total no. of Questions : <span class="float-right">{{data.total_questions}}</span></li>
+        <li>Total no of marks : <span class="float-right">{{data.total_marks}}</span></li>
+        <li>No. of marks for each correct answer :
+          <span class="float-right">{{data.correct_ans_point}}</span></li>
+      </ul>
+    </mat-dialog-content>
+    <mat-dialog-actions  class="danger_btn">
+        <button color="primary" (click)="quizPlay(data)" mat-dialog-close mat-button>Play</button>
+        <button color="accent" mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+</div>
+
+
+<!-- Quiz Result Dialog -->
+<div *ngIf="data.result_object">
+    <h4 mat-dialog-title>
+       Your Result
+    </h4>
+    <mat-dialog-content>
+        <div class="row mb-2">
+            <div class="col-6">
+                <p class="mb-0 fs_14">Total Marks: {{data.result_object.total_marks}}</p>
+            </div>
+            <div class="col-6">
+                <p class="mb-0 fs_14">Total Questions: {{data.result_object.total_questions}}</p>
+            </div>
+        </div>
+
+        <div class="row mb-2 row-border" *ngFor="let value of questionAndAnswer">
+            <div class="col-10">
+                <h2 class="mb-1 fs_16"><span class="span-black fw_500">Q: </span>{{value.question}} </h2>
+                <p class="mb-0 fs_14"> <span class="span-black fw_500">Your Answer: </span>{{value.user_ans_value}} </p>
+                <p class="mb-0 fs_14"> <span class="span-black fw_500">Correct Answer: </span>{{value.correct_ans_value}} </p>
+            </div>
+            <div class="col-2 d-flex align-items-center justify-content-center">
+                <img *ngIf="value.correct_answer == 'y'" src="assets/icons/success.png">
+                <img *ngIf="value.correct_answer == 'n'" src="assets/icons/cancel.png">
+            </div>
+        </div>
+
+
+        <ul class="p-0">
+          <li>Marks obtained : <span class="float-right">{{data.result_object.obtain_marks}}/{{data.result_object.total_marks}}</span></li>
+          <li>Correct Answers : <span class="float-right">{{data.result_object.correct_answer}}</span></li>
+          <li>Wrong Answers : <span class="float-right">{{data.result_object.worng_answer}}</span></li>
+          <li>No. of question attempt :
+            <span class="float-right">{{data.result_object.attempt_question}}/{{data.result_object.total_questions}}</span></li>
+        </ul>
+      </mat-dialog-content>
+      <mat-dialog-actions class="danger_btn" align="end">
+        <button color="accent" mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+</div>
+
+
+<!-- Logout Dialog -->
+<div *ngIf="data == 'logout'">
+    <h4 mat-dialog-title>
+        Are you sure want to logout?
+    </h4>
+    <mat-dialog-actions class="danger_btn" align="center">
+            <button color="primary" (click)="logout()" mat-dialog-close mat-button>Yes</button>
+            <button color="accent" mat-button mat-dialog-close>No</button>
+    </mat-dialog-actions>
+</div>
+
+<!-- Time Table Dialog -->
+<div *ngIf="timeTable.text == 'table'">
+    <h4 mat-dialog-title>
+        Time Table
+    </h4>
+    <mat-dialog-content class="time-table">
+        <div [innerHtml]="data.table"></div>
+    </mat-dialog-content>
+    <mat-dialog-actions class="danger_btn" align="center">
+        <button color="primary" mat-button mat-dialog-close>OK</button>
+    </mat-dialog-actions>
+</div>
+
+<!-- forgot password -->
+<div *ngIf="data.name == 'forgot-password-dialog'">
+    <h6 class="mb-5">Enter OTP sent on your mobile</h6>
+    <mat-dialog-content class="login_page_theme"  align="center">
+        <mat-form-field class="full-width">
+            <input color="primary"
+                   type="text"
+                   [(ngModel)]="otpDetail"
+                   matInput
+                   placeholder="Enter OTP">
+       </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions class="danger_btn" align="center">
+        <button (click)="checkOtp(data.mobile)" color="primary" mat-button>OK</button>
+    </mat-dialog-actions>
+</div>
+
+<!-- reset password -->
+<div *ngIf="data == 'reset-password'">
+    <h6 class="mb-5">Reset Your Password</h6>
+    <mat-dialog-content class="login_page_theme"  align="center">
+            <form [formGroup]="resetForm" (ngSubmit)="reset()">
+                <mat-form-field  class="full-width d-block">
+                        <input color="primary"
+                            formControlName="oldpassword"
+                            type="password" matInput
+                            placeholder="Old Password">
+                </mat-form-field>
+                <mat-form-field  class="full-width d-block">
+                    <input color="primary"
+                            formControlName="newpassword"
+                            type="password" matInput
+                            placeholder="New Password">
+                </mat-form-field>
+                <mat-form-field  class="full-width d-block">
+                    <input color="primary"
+                            formControlName="confirmpassword"
+                            type="password" matInput
+                            placeholder="Confirm Password">
+                </mat-form-field>
+                <div class="form-group pt-4">
+                    <button class="login_btn"color="pimary" mat-button>Reset</button>
+                </div>
+            </form>
+    </mat-dialog-content>
+</div>
+
+<!-- profile -->
+<div *ngIf="data == 'profile'">
+    <div *ngIf="loading" class="loading">
+      <span><img src="./assets/icons/ring.gif" alt=""></span>
+    </div>
+    <h6 class="mb-5" mat-dialog-title>Profile</h6>
+    <mat-dialog-content class="login_page_theme">
+        <div class="row">
+          <div class="col-md-12 text-center content_img">
+            <div class="profile-img-upper-div">
+                <img *ngIf="!fileImage" src="{{userService.baseUrl}}{{profileData.image}}" onerror="this.src='./assets/icons/user.png'" class="rounded-circle">
+                <img *ngIf="fileImage" [src]="fileImage"  onerror="this.src='./assets/icons/user.png'"  class="rounded-circle">
+                <div class="profile-img-inner-div">
+                  <label for="profile_image">
+                  <img src="assets/icons/edit.svg">
+                  </label>
+                <input class="file-input" type="file" name="profile_image" accept="image/*" id="profile_image" (change)="onChangeFileImage($event)">
+                </div>
+            </div>
+
+          </div>
+        </div>
+        <form [formGroup]="profileForm">
+            <mat-form-field  class="full-width d-block">
+                    <input color="primary"
+                        formControlName="name"
+                        type="text" matInput
+                        placeholder="Name">
+            </mat-form-field>
+            <mat-form-field  class="full-width d-block">
+                <input color="primary"
+                        formControlName="fatherName"
+                        type="text" matInput
+                        placeholder="Father Name">
+            </mat-form-field>
+
+            <mat-form-field  class="full-width d-block">
+                <input color="primary"
+                        formControlName="montherName"
+                        type="text" matInput
+                        placeholder="Mother Name">
+            </mat-form-field>
+
+            <mat-form-field class="full-width d-block">
+              <mat-select placeholder="Gender" formControlName="gender" color="primary">
+                <mat-option value="male" color="primary">Male</mat-option>
+                <mat-option value="female" color="primary">Female</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field  class="full-width d-block">
+                <textarea color="primary"
+                        formControlName="details"
+                        type="text" matInput
+                        placeholder="Details"></textarea>
+            </mat-form-field>
+
+
+        </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="danger_btn" align="end">
+    <button class="login_btn" color="primary" (click)="onUpdateProfile()"  mat-button>Update</button>
+    <button class="login_btn" color="accent" mat-dialog-close mat-button>Close</button>
+</mat-dialog-actions>
+
+</div>
+
+<!-- change number -->
+<div *ngIf="data == 'change-number'">
+  <div *ngIf="loading" class="loading">
+    <span><img src="./assets/icons/ring.gif" alt=""></span>
+  </div>
+  <h6 class="mb-5" mat-dialog-title>Change Number</h6>
+  <mat-dialog-content class="login_page_theme">
+
+      <mat-form-field  class="full-width d-block">
+          <input color="primary"
+                  type="text" matInput
+                  readonly
+                  placeholder="Old Number"
+                  [(ngModel)]="oldNumber">
+      </mat-form-field>
+
+      <mat-form-field  class="full-width d-block">
+          <input color="primary"
+                  type="text" matInput
+                  placeholder="New Number"
+                  [(ngModel)]="newNumber">
+      </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions class="danger_btn" align="end">
+        <button class="login_btn" color="primary" (click)="onChangeNumber()"  mat-button>Change</button>
+        <button class="login_btn" color="accent" mat-dialog-close mat-button>Close</button>
+    </mat-dialog-actions>
+</div>
+
+<!-- change number otp -->
+<div *ngIf="data.flag == 'change-number-otp'">
+    <div *ngIf="loading" class="loading">
+      <span><img src="./assets/icons/ring.gif" alt=""></span>
+    </div>
+    <h6 class="mb-5" mat-dialog-title>Check Otp</h6>
+    <p>Otp have been sent on your number {{newNumber}}</p>
+    <mat-dialog-content class="login_page_theme">
+
+        <mat-form-field  class="full-width d-block">
+            <input color="primary"
+                    type="text" matInput
+                    placeholder="Otp"
+                    [(ngModel)]="checkOtpNumber">
+        </mat-form-field>
+
+      </mat-dialog-content>
+      <mat-dialog-actions class="danger_btn" align="end">
+          <button class="login_btn" color="primary" (click)="onCheckNumberOtp()"  mat-button>Ok</button>
+          <button class="login_btn" color="accent" mat-dialog-close mat-button>Close</button>
+      </mat-dialog-actions>
+  </div>
+
+<!-- ask a question -->
+<div *ngIf="data == 'ask'">
+    <div *ngIf="loading" class="loading">
+      <span><img src="./assets/icons/ring.gif" alt=""></span>
+    </div>
+    <h6 class="mb-5" mat-dialog-title>Ask Question</h6>
+    <mat-dialog-content class="login_page_theme">
+
+        <mat-form-field  class="full-width d-block">
+            <textarea color="primary"
+                    type="text" matInput
+                    placeholder="Message"
+                    [(ngModel)]="askInput"></textarea>
+        </mat-form-field>
+
+      </mat-dialog-content>
+      <mat-dialog-actions class="danger_btn" align="end">
+          <button class="login_btn" color="primary" (click)="onSubmitAsk()"  mat-button>Send</button>
+          <button class="login_btn" color="accent" mat-dialog-close mat-button>Close</button>
+      </mat-dialog-actions>
+  </div>
+
+<!-- feedback -->
+<div *ngIf="data == 'feedback'">
+    <div *ngIf="loading" class="loading">
+      <span><img src="./assets/icons/ring.gif" alt=""></span>
+    </div>
+    <h6 class="mb-5" mat-dialog-title>Feedback</h6>
+    <mat-dialog-content class="login_page_theme">
+
+        <mat-form-field  class="full-width d-block">
+            <textarea color="primary"
+                    type="text" matInput
+                    placeholder="Message"
+                    [(ngModel)]="feedbackInput"></textarea>
+        </mat-form-field>
+
+      </mat-dialog-content>
+      <mat-dialog-actions class="danger_btn" align="end">
+          <button class="login_btn" color="primary" (click)="onSubmitAskAnsFeedback()"  mat-button>Send</button>
+          <button class="login_btn" color="accent" mat-dialog-close mat-button>Close</button>
+      </mat-dialog-actions>
+  </div>
+
+<div *ngIf="data == 'chart'">
+    <h6 class="mb-5" mat-dialog-title>Prodigee Score</h6>
+  <mat-dialog-content class="login_page_theme">
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+          <app-second-slide></app-second-slide>
+      </div>
+    </div>
+    <br>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="danger_btn" align="end">
+      <button class="login_btn" color="accent" mat-dialog-close mat-button>Close</button>
+  </mat-dialog-actions>
+
+</div>

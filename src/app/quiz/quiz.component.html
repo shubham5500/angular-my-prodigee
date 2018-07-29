@@ -1,0 +1,100 @@
+<div *ngIf="loading" class="loader">
+    <span><img src="./assets/icons/ring.gif" alt=""></span>
+</div>
+<div class="container-fluid quiz wrapper pl-25">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="quiz_head">
+          <div class="col-md-4">
+            <div class="row">
+                <!-- <div class="info_heading"> -->
+                    <div class="col-md-3 p-0">
+                        <img width="96"
+                            height="96"
+                            src="{{userServices.baseUrl}}{{dashboardData.image}}"
+                            onerror="this.src = './assets/icons/user.png'"
+                            class="rounded-circle mt-2 ml-3 px-3 py-3">
+                    </div>
+                   <div class="col-md-9">
+                        <!-- <div class="d-inline-block">
+                            <span>{{dashboardData.school_name}}</span><br>
+                            <span>Class {{studentClass}}</span><span>Section A</span>
+                        </div> -->
+                        <div class="row pt-4">
+                            <div class="col-md-12 mt-2 text-center text-capitalize">
+                                {{dashboardData.name}}
+                            </div>
+                            <div class="col-md-12  text-center">
+                               Class {{studentClass}}
+                            </div>
+                        </div>
+                   </div>
+                <!-- </div> -->
+            </div>
+          </div>
+          <div class="col-md-4">
+                <div class="score_card">
+                  <p>
+                    <span class="float-left">Current Prodigee Score <br>
+                        {{dashboardData.score_date ? (dashboardData.score_date * 1000 | date: 'dd/MM/yyyy') : 'No Available'}}
+                    </span>
+                    <span class="float-right">{{prodigeeScore ? prodigeeScore : '00'}}</span>
+                  </p>
+                </div>
+          </div>
+          <div class="col-md-4">
+              <div class="row p-0 head school_name">
+                  <div class="col-md-9 p-0">
+                      <div class="row text-capitalize pt-3 text-center">
+                        <div class="col-md-12 mt-3">{{dashboardData.school_name}}</div>
+                        <div class="col-md-12">{{dashboardData.city_name}}, {{dashboardData.state_name}}</div>
+                      </div>
+                  </div>
+                  <div class="col-md-3 p-0">
+                    <img width="50"
+                        height="96"
+                        src="{{userServices.baseUrl}}{{dashboardData.school_image}}"
+                        onerror="this.src = './assets/icons/assets/iasc_logo_60.gif'">
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 quiz_content">
+           <div class="row p-0">
+                <div class="col-md-12">
+                    <p class="m-0 quiz_content_heading">Assessment</p>
+                </div>
+               <div class="col-md-12">
+                    <div class="row quiz_card_row">
+                        <h4 class="text-center" *ngIf="quizListData.length == 0">
+                            No Data Found
+                        </h4>
+                        <div *ngFor="let quiz of quizListData"
+                             class="col-md-3">
+                            <div (click)="openMainDialog(quiz)"
+                                 [style.background]="getBackground(quiz.quiz_logo)"
+                                class="third_slide_card">
+                                <div *ngIf="quiz.given == 'y'" class="overlay_quiz_list">
+                                    <p>Already Attempted Quiz</p>
+                                </div>
+                                <p>{{quiz.quiz_name}}</p>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+           </div>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-md-12">
+            <div class="quiz_footer">
+                <div class="m-auto col-md-8 ">
+                    <p class="text-center ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+            </div>
+        </div>
+      </div> -->
+  </div>

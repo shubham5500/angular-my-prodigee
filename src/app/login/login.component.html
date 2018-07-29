@@ -1,0 +1,55 @@
+<div *ngIf="loading" class="loader">
+  <span><img src="./assets/icons/ring.gif" alt=""></span>
+</div>
+<div class="container-fluid login_container login_page_theme">
+    <div class="row">
+      <div *ngIf="mainForm == ''" class="col-md-3 text-center login_div">
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <img src="./assets/icons/logo-prodigee.png" alt="">
+          </div>
+          <div class="col-md-12 mb-3 mt_10">
+            <p class="text-uppercase">Login To Your Account</p>
+          </div>
+          <div class="col-md-12 mb-3">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+              <mat-form-field  class="full-width">
+                  <input color="primary" formControlName="mobile" type="text" matInput placeholder="Mobile Number">
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                  <input type="password" formControlName="password" matInput placeholder="Password">
+              </mat-form-field>
+              <div class="form-group pt-4">
+                 <button class="login_btn" color="primary" mat-raised-button>Login</button>
+                <a (click)="mainForm = 'forgot'" class="no_fill_btn">Forgot Password?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="mainForm == 'forgot'" class="col-md-3 text-center login_div">
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <img src="./assets/icons/logo-prodigee.png" alt="">
+          </div>
+          <div class="col-md-12 mb-3 mt_10">
+            <p class="text-uppercase">Enter Your Mobile Number</p>
+          </div>
+          <div class="col-md-12 mb-3">
+            <form [formGroup]="forgotForm" (ngSubmit)="forgot()">
+              <mat-form-field  class="full-width">
+                   <input color="primary"
+                          formControlName="forgotMobileNumber"
+                          type="text" matInput
+                          placeholder="Mobile Number">
+              </mat-form-field>
+              <div class="form-group pt-4">
+                 <button class="login_btn" color="primary" mat-raised-button>Enter</button>
+                 <a (click)="mainForm = ''" class="no_fill_btn">Back to Login?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

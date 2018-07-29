@@ -1,0 +1,43 @@
+<div *ngIf="loading" class="loader">
+	<span><img src="./assets/icons/ring.gif" alt=""></span>
+</div>
+<div class="container-fluid wrapper pl-25">
+	<div class="row">
+		<div class="col-md-4">
+			<app-first-slide></app-first-slide>
+		</div>
+		<!-- <div class="col-md-4">
+			<app-second-slide></app-second-slide>
+		</div> -->
+		<div class="col-md-8">
+			<div class="three_slide slide">
+				<div class="row p-0 third_card_head">
+					<div class="col-md-12">
+						<p class="text-capitalize">
+							Activity
+							<!-- Dynamic -->
+						</p>
+					</div>
+				</div>
+				<div class="row third_row">
+					<div class="col-md-12 third_slide_content" id="scroll2">
+						<h4 class="text-center error_heading" *ngIf="activityData.length == 0">
+							No Data Found
+            </h4>
+            <div class="row">
+              <div class="col-md-5 mx-29 third_slide_card"
+                (click)="mainDialog(activity)"
+                *ngFor="let activity of activityData"
+                [style.background]="getBackground(activity.thumb_image)">
+                <p>
+                  {{activity.title}}
+                </p>
+              </div>
+            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

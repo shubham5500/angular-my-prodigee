@@ -1,0 +1,71 @@
+.third_row .third_slide_content.category_section{
+    padding: 0 20px !important;
+}
+.third_row .third_slide_content.category_section .third_slide_card{
+    height: 120px;
+}
+.third_row .third_slide_content.category_section .third_slide_card p{
+    top: 40%;
+    width: auto;
+}
+.third_slide_card.video_cate_card{   
+    background: url('/assets/icons/categories/story.jpg') ;
+    background-size: 100%;
+    /* 0px -15px */
+}
+.third_slide_card.activities_cate_card{   
+    background: url('/assets/icons/categories/activity.jpg');
+    background-size: 100%;
+    /* 0px -40px */
+}
+.third_slide_card.assignment_cate_card{   
+    background: url('/assets/icons/categories/assignment.jpg');
+    background-size: 100%;
+     /* 0px -60px */
+}
+.third_slide_card.quiz_cate_card{   
+    background: url('/assets/icons/categories/assessment.jpg');
+    background-size: 100%;
+     /* 0px -75px */
+}
+.third_slide_card.reading_cate_card{   
+    background: url('/assets/icons/categories/worksheet.jpg');
+    background-size: 100%;
+     /* 0px -75px */
+}
+.third_slide_card.article_cate_card{   
+    background: url('/assets/icons/categories/lesson.jpg');
+    background-size: 100%;
+     /* 0px -35px */
+}
+.third_slide_card{
+	box-shadow: 1px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    /* background: url('/assets/icons/assets/laptop_guy.jpg') -170px -101px; */
+    height: 165px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 25px;
+    cursor: pointer;
+    background-size: 100% !important;
+    background-position: center center !important;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    overflow: hidden;
+}
+.third_slide_card p{
+	text-transform: uppercase;
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+    display: inline-block;
+    min-width: 130px;
+    text-align: right;
+    padding-right: 15px;
+    color: hsl(0, 0%, 100%);
+    text-shadow: 1px 1px 1px black;
+    margin: 0;
+    word-wrap: break-word;
+    font-weight: 500;
+    /* width: 100%; */
+}

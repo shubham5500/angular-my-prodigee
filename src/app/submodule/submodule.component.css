@@ -1,0 +1,175 @@
+
+/* .slide{
+	min-height: 575px;
+	box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.17);
+	border-radius: 6px;
+}
+.wrapper .row:nth-child(1){
+	padding-right: 90px;
+	padding-top: 90px;
+}
+.three_forth_slide{
+	min-height: 390px;
+	box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.17);
+	border-radius: 6px;
+}
+.one_forth_slide{
+	min-height: 155px;
+	box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.17);
+	border-radius: 6px;
+	margin-top: 30px;
+} */
+/* 
+.first_slide.slide .head>img{
+	margin: 25px 40px;
+}
+.first_slide.slide .head p{
+	margin: auto 0px;
+    text-align: center;
+    color: #4a4a4a;
+    letter-spacing: 0.3px;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.first_slide.slide .head p span:nth-child(1){
+    font-size: 18px;
+    font-weight: 400;
+}
+.first_slide.slide .head p span:nth-child(2){
+    font-weight: 400;
+}
+.content .content_img img{
+	margin-bottom: 10px;
+	border: 2px solid #410f20;
+    border-radius: 50%;
+    height: 68px;
+    width: 68px;
+} */
+/* .content .content_text p:nth-child(1){
+	font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 3px;
+}
+.content .content_text p:nth-child(2){
+	font-weight: 400;
+}
+.content .content_text p:nth-child(2) span{
+	margin: 0 7px;
+}
+.score_card_section{
+	padding-left: 27px;
+    padding-right: 27px;
+} */
+
+/* 
+
+canvas{
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+}
+.middle_card_head .first.col-md-12>p{
+	padding: 30px;
+    margin: 0;
+   	color: #777777;
+}
+.middle_card_head .second.col-md-12 div.float-right{
+	padding: 0 25px 25px 25px;
+    font-size: 15px;
+    color: #777777;
+}
+.canvas_div{
+	padding-left: 12px;
+    margin-top: 12px;
+}
+.one_forth_slide span b{
+	font-weight: 500;
+}
+.middle_card_bottom_head{
+	padding: 20px;
+	color: #4a4a4a;
+}
+.middle_card_bottom_footer{
+	margin-top: 30px;
+	padding: 0 25px;
+}
+.middle_card_bottom_footer .col-md-4 p{
+	font-size: 14px;
+    color: #4a4a4a;
+    margin-top: 5px;
+}
+.middle_card_bottom_footer .col-md-4 p span:nth-child(1){
+	padding-right: 5px;
+    border-right: 1px solid #777777;
+}
+.middle_card_bottom_footer .col-md-4 p span:nth-child(2){
+	padding-left: 5px;
+}
+.middle_card_bottom_footer .col-md-4 img{
+	border: 2px solid #410f20;
+    border-radius: 50%;
+}
+.third_card_head .col-md-12 p{
+	padding: 30px;
+	margin: 0;
+    color: #777777;
+}
+
+.third_row{
+	padding: 0 30px;
+}
+.third_slide_content{
+	max-height: 480px;
+    overflow-y: scroll;
+    padding: 0 45px;
+}
+.third_slide_card{
+	box-shadow: 1px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    background: url('/assets/icons/assets/laptop_guy.jpg') -170px -101px;
+    height: 165px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+#scroll2::-webkit-scrollbar {
+    border-radius: 32px !important;
+    width: 6px;
+    background-color: #fff;
+}
+#scroll2::-webkit-scrollbar-thumb{
+    border-radius: 32px !important;
+    margin-right: 5px;
+    background: #742334;
+}
+.third_slide_card p{
+	text-transform: uppercase;
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+    display: inline-block;
+    width: 130px;
+    text-align: right;
+    padding-right: 15px;
+    color: hsl(0, 0%, 100%);
+    text-shadow: 1px 1px 1px black;
+    margin: 0;
+    word-wrap: break-word;
+}
+.loader{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100000;
+    background: rgba(255, 255, 255, 0.64);
+}
+.loader span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.loader span img{
+    height: 64px;
+} */

@@ -1,0 +1,189 @@
+<div *ngIf="loading" class="loader">
+    <span><img src="./assets/icons/ring.gif" alt=""></span>
+  </div>
+<div class="p-0 position-relative">
+  <div class="main_sidebar d-inline-block float-right" id="scroll">
+    <ul class="p-0 first_ul">
+        <li  data-toggle="tooltip" title="Dashboard" class="menu_li" routerLink="/dashboard">
+          <img src="./assets/icons/dashboard.png">
+          <a class="menu_anchor">Dashboard</a>
+        </li>
+
+        <li  data-toggle="tooltip" title="Profile" class="menu_li" (click)="onProfile()">
+          <img src="./assets/icons/user-icon.png">
+          <a class="menu_anchor">Profile</a>
+        </li>
+      <li data-toggle="tooltip" title="Prodigee Modules" class="menu_li">
+        <a class="btn btn-default menu_anchor"
+            data-toggle="collapse"
+            href="#prodigee"
+            aria-expanded="false"
+            aria-controls="collapseExample">
+            <img class="menu_img" src="./assets/icons/1_30.png">Prodigee Modules
+            <img class="menu_img" src="./assets/icons/down-arrow.png">
+        </a>
+        <ul class="collapse second_ul" id="prodigee">
+          <li routerLink="/submodule/{{module.id}}"
+              class="p-0 text-capitalize module_li"
+              *ngFor="let module of modules">
+              {{module.module_name}}
+          </li>
+        </ul>
+      </li>
+      <li data-toggle="tooltip" title="Daily Quiz" (click)="randomQuiz()">
+        <img src="./assets/icons/3_30.png">
+        <a>Daily Quiz</a>
+      </li>
+      <li class="menu_li" data-toggle="tooltip" title="Lesson Plans">
+        <a class="btn btn-default menu_anchor"
+            data-toggle="collapse"
+            href="#reading"
+            aria-expanded="false"
+            aria-controls="collapseExample">
+            <img class="menu_img" src="./assets/icons/8_30.png">Lesson Plans
+            <img class="menu_img" src="./assets/icons/down-arrow.png">
+        </a>
+        <ul class="collapse second_ul" id="reading">
+          <li (click)="categoryModule(module.id , 'reading-material')"
+              class="p-0 text-capitalize module_li"
+              *ngFor="let module of modules">
+            {{module.module_name}}
+          </li>
+        </ul>
+      </li>
+      <li class="menu_li" data-toggle="tooltip" title="Assessments">
+        <a class="btn btn-default menu_anchor"
+            data-toggle="collapse"
+            href="#quiz"
+            aria-expanded="false"
+            aria-controls="collapseExample1">
+            <img class="menu_img" src="./assets/icons/4_30.png">Assessments
+            <img class="menu_img" src="./assets/icons/down-arrow.png">
+        </a>
+        <ul class="collapse second_ul" id="quiz">
+          <li  class="p-0 text-capitalize module_li"
+               (click)="categoryModule(module.id , 'quiz')"
+                *ngFor="let module of modules">
+                {{module.module_name}}
+          </li>
+        </ul>
+      </li>
+      <li class="menu_li" data-toggle="tooltip" title="Stories">
+        <a class="btn btn-default menu_anchor"
+            data-toggle="collapse"
+            href="#videos"
+            aria-expanded="false"
+            aria-controls="collapseExample">
+          <img class="menu_img" src="./assets/icons/5_30.png">Stories
+          <img class="menu_img" src="./assets/icons/down-arrow.png">
+        </a>
+        <ul class="collapse second_ul" id="videos">
+          <li (click)="categoryModule(module.id , 'video')"
+              class="p-0 text-capitalize module_li"
+              *ngFor="let module of modules">
+            {{module.module_name}}
+          </li>
+        </ul>
+      </li>
+      <li class="menu_li" data-toggle="tooltip" title="Activities">
+        <a class="btn btn-default menu_anchor"
+            data-toggle="collapse"
+            href="#activities"
+            aria-expanded="false"
+            aria-controls="collapseExample">
+            <img class="menu_img" src="./assets/icons/6_30.png">Activities
+            <img class="menu_img" src="./assets/icons/down-arrow.png">
+        </a>
+        <ul class="collapse second_ul" id="activities">
+          <li (click)="categoryModule(module.id , 'activities')"
+              class="p-0 text-capitalize module_li"
+              *ngFor="let module of modules">
+              {{module.module_name}}
+          </li>
+        </ul>
+      </li>
+
+      <li class="menu_li" data-toggle="tooltip" title="Worksheets">
+        <a class="btn btn-default menu_anchor"
+            data-toggle="collapse"
+            href="#article"
+            aria-expanded="false"
+            aria-controls="collapseExample">
+            <img class="menu_img" src="./assets/icons/14_30.png">Worksheets
+            <img class="menu_img" src="./assets/icons/down-arrow.png">
+        </a>
+        <ul class="collapse second_ul" id="article">
+          <li (click)="categoryModule(module.id , 'article')"
+              class="p-0 text-capitalize module_li"
+              *ngFor="let module of modules">
+               {{module.module_name}}
+          </li>
+        </ul>
+      </li>
+
+      <li class="menu_li" data-toggle="tooltip" title="Assignment">
+        <a class="btn btn-default menu_anchor"
+            data-toggle="collapse"
+            href="#assignment"
+            aria-expanded="false"
+            aria-controls="collapseExample">
+            <img class="menu_img" src="./assets/icons/7_30.png">Assignments
+            <img class="menu_img" src="./assets/icons/down-arrow.png">
+        </a>
+        <ul class="collapse second_ul" id="assignment">
+          <li (click)="categoryModule(module.id , 'assignment')"
+              class="p-0 text-capitalize module_li"
+              *ngFor="let module of modules">
+               {{module.module_name}}
+          </li>
+        </ul>
+      </li>
+      <li  data-toggle="tooltip" title="Time Table" (click)="timeTable()" class="menu_li">
+        <img class="menu_img" src="./assets/icons/2_30.png">
+        <a class="menu_anchor">Time Table</a>
+      </li>
+
+      
+
+      <!-- <li class="menu_li" data-toggle="tooltip" title="Know More">
+        <a class="btn btn-default menu_anchor"
+              data-toggle="collapse"
+              href="#know-more"
+              aria-expanded="false"
+              aria-controls="collapseExample">
+              <img class="menu_img" src="./assets/icons/9_30.png">Know More
+              <img class="menu_img" src="./assets/icons/down-arrow.png">
+          </a>
+          <ul class="collapse second_ul" id="know-more">
+            <li (click)="categoryModule(module.id , 'know-more')"
+                class="p-0 text-capitalize module_li"
+                *ngFor="let module of modules">
+                {{module.module_name}}
+            </li>
+          </ul>
+      </li> -->
+
+
+      <li class="menu_li" data-toggle="tooltip" title="Ask A Question" (click)="onAskAndFeedBack('ask')">
+        <img src="./assets/icons/10_30.png">
+        <a  class="menu_anchor">Ask A Question</a>
+      </li>
+      <li class="menu_li"  data-toggle="tooltip" title="Feedback" (click)="onAskAndFeedBack('feedback')">
+        <img src="./assets/icons/13_30.png">
+        <a class="menu_anchor">Feedback</a>
+      </li>
+      <li (click)="reset()" class="menu_li" data-toggle="tooltip" title="Reset Password">
+        <img  src="./assets/icons/reset_password_32.png">
+        <a class="menu_anchor">Reset Password</a>
+      </li>
+      <li (click)="changeNumber()" class="menu_li" data-toggle="tooltip" title="Change Number">
+        <img  src="./assets/icons/mobile.png">
+        <a class="menu_anchor">Change number</a>
+      </li>
+      <li (click)="logout()" class="menu_li" data-toggle="tooltip" title="Logout">
+        <img class="menu_img" src="./assets/icons/logout_30.png">
+        <a class="menu_anchor">Logout</a>
+      </li>
+    </ul>
+</div>
+</div>

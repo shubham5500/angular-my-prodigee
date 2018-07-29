@@ -1,0 +1,46 @@
+<div *ngIf="loading" class="loader">
+	<span><img src="./assets/icons/ring.gif" alt=""></span>
+</div>
+<div class="container-fluid wrapper pl-25">
+	<div class="row">
+		<div class="col-md-4">
+			<app-first-slide></app-first-slide>
+		</div>
+		<!-- <div class="col-md-4">
+			<app-second-slide></app-second-slide>
+		</div> -->
+		<div class="col-md-8">
+			<div class="three_slide slide">
+				<div class="row p-0 third_card_head">
+					<div class="col-md-12">
+						<p>
+							Story
+						</p>
+					</div>
+				</div>
+				<div class="row third_row">
+					<div class="col-md-12 third_slide_content" id="scroll2">
+						<h4 class="text-center error_heading"
+							*ngIf="videoData.length == 0">
+							No Data Found
+            </h4>
+            <div class="row">
+              <div (click)="openVideoDialog(video.link , video.title, video)"
+                  class="col-md-5 mx-29 third_slide_card"
+                  [style.background]="getBackground(video.thumb_image)"
+                  *ngFor="let video of videoData">
+                <div class="video_card">
+                  <img src="./assets/icons/play-btn.png">
+                </div>
+                <p>
+                  {{video.title}}
+                </p>
+              </div>
+            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

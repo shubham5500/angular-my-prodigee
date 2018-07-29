@@ -1,0 +1,52 @@
+.slide{
+	min-height: 575px;
+	box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.17);
+	border-radius: 6px;
+}
+.wrapper .row:nth-child(1){
+	padding-right: 90px;
+	padding-top: 90px;
+}
+
+.first_slide.slide .head>img{
+	padding: 25px 25px 25px 40px;
+}
+.first_slide.slide .head p{
+	margin: auto 0px;
+    text-align: center;
+    color: #4a4a4a;
+    letter-spacing: 0.3px;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.first_slide.slide .head p span:nth-child(1){
+    font-size: 18px;
+    font-weight: 400;
+}
+.first_slide.slide .head p span:nth-child(2){
+    font-weight: 400;
+}
+.content .content_img img{
+	margin-bottom: 10px;
+	border: 2px solid #410f20;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+}
+.content .content_text p:nth-child(1){
+	font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 3px;
+}
+.content .content_text p:nth-child(2){
+	font-weight: 400;
+}
+.content .content_text p:nth-child(2) span{
+	margin: 0 7px;
+}
+.score_card_section{
+	padding-left: 27px;
+    padding-right: 27px;
+}

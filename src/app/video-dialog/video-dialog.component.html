@@ -1,0 +1,10 @@
+<h4 class="video_title" mat-dialog-title>
+ {{data.title}}
+</h4>
+<mat-dialog-content>
+  <iframe width="560" height="315" [src]="videoURL" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button *ngIf="data.videoData.pdf" color="primary" mat-button (click)="onViewDocument(data.videoData.pdf)">View Document</button>
+  <button mat-button mat-dialog-close>Close!</button>
+</mat-dialog-actions>

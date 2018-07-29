@@ -1,0 +1,30 @@
+.login_container{
+    background: url('/assets/icons/bg.jpg');
+    width: 100%;
+    min-height: 100vh;
+}
+.login_div{
+    background: white;
+    margin: 4% auto 10px auto;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 4px 5px -2px rgba(0,0,0,.2), 0 7px 10px 1px rgba(0,0,0,.14), 0 2px 16px 1px rgba(0,0,0,.12);
+}
+.no_fill_btn{
+    display: block;
+    padding-top: 15px;
+    font-size: 11px; 
+    cursor: pointer;   
+}
+.no_fill_btn:hover{
+    text-decoration: underline !important;
+}
+.login_div .form-control.main_input{
+    font-size: 15px;
+}
+.full-width{
+    width: 100%;
+}
+.login_btn {
+    border-radius: 32px;
+}

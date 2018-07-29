@@ -1,0 +1,66 @@
+.quiz_dialog_logo{
+    height: 200px;
+    width: auto;
+    margin-bottom: 20px;
+}
+table{
+    width: 100%;
+}
+tr>td{
+    padding: 15px !important;
+}
+.iframe-div{
+  width: 100%;
+  height: 465px;
+  position: relative;
+}
+.inner-iframe-div{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 4px;
+  right: 10px;
+}
+.profile-img-upper-div{
+  width: 68px;
+  height: 68px;
+  display: inline-block;
+  position: relative;
+  position: relative;
+}
+.profile-img-upper-div>img{
+  margin-bottom: 10px;
+  border: 2px solid #410f20;
+  border-radius: 50%;
+  height: 68px;
+  width: 68px;
+}
+.profile-img-inner-div{
+  position: absolute;
+  top: 45px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 10;
+  left: 52px;
+  width: 15px;
+  height: 15px;
+}
+.profile-img-inner-div label{
+  width: 15px;
+  height: 15px;
+  margin: 0;
+}
+.profile-img-inner-div img{
+  width: 15px;
+  margin-top: -10px;
+}
+.profile-img-inner-div .file-input{
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+}
+.row-border{
+  border-bottom: 1px solid #dedede;
+}

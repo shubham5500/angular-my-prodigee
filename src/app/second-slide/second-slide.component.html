@@ -1,0 +1,51 @@
+<div class="second_slide three_forth_slide position-relative">
+  <div class="row p-0 middle_card_head">
+    <div class="col-md-12 first">
+      <p>Progress</p>
+    </div>
+    <div class="col-md-12 second">
+      <div class="float-right">
+        <span>X-Axis: Month</span><br>
+        <span>Y-Axis: Score</span>
+      </div>
+    </div>
+  </div>
+  <div class="canvas_div" height="250px;" style="width: 100%">
+        <canvas  id="canvas"></canvas>
+  </div>
+  <div *ngIf="!showChart" class="no-available-div">
+    <h4>No Data Available</h4>
+  </div>
+</div>
+
+<div class="one_forth_slide position-relative">
+  <div class="middle_card_bottom_head">
+    <span class="float-left">Current Top 3 Students</span>
+    <span class="float-right">Class <b>{{className}}</b> Section <b>A</b></span>
+  </div>
+  <div class="clearfix"></div>
+  <div class="row middle_card_bottom_footer" >
+    <div *ngIf="topStudentData.length == 0" class="no-available-div">
+      <h4>No Data Available</h4>
+    </div>
+    <div *ngFor="let topStudent of topStudentData" class="col-md-4 text-center">
+      <div class="col-md-12 text-center">
+        <img width="32" height="32" src="{{userService.baseUrl}}{{topStudent.student_image}}"  onerror="this.src = './assets/icons/user_32.png'" >
+      </div>
+      <div class="col-md-12 p-0">
+        <div class="row">
+          <div class="col-md-10 p-0">
+            <div title="{{topStudent.student_name}}" class="top_student_name">
+              {{topStudent.student_name}}
+            </div>
+          </div>
+          <div class="col-md-2 p-0">
+            <div class="top_student_score">
+              {{topStudent.score}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

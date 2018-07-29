@@ -1,0 +1,68 @@
+<div *ngIf="loading" class="loader">
+	<span><img src="./assets/icons/ring.gif" alt=""></span>
+</div>
+<div class="container-fluid quiz wrapper pl-25">
+  <div class="row">
+    <div class="col-md-4 float-left subject_name"><p class="m-0">Chemistry- <span class="poppins">1</span></p></div>
+    <div class="col-md-2 ml-auto timer">
+      <div class="float-right">
+          <span class="timer_img"><img src="./assets/icons/assets/stopwatch_g.png"></span>
+          <span>{{min}}:{{sec}} m</span>
+      </div>
+    </div>
+  </div>
+  <div class="row padding_row">
+      <div *ngFor="let question of quizTestData; let i = index;" class="col-md-12">
+        <div class="quiz_question pt-5 mb-5" 
+              *ngIf="i == number">
+          <div class="row question_section">
+            <div class="col-md-10 m-auto question">
+              <p><span>Q.{{i+1}}</span> 
+                {{question.question}}</p>
+            </div>
+            <div class="col-md-10 m-auto options">
+              <form>
+                <div class="form-group">
+                  <label class="label_div">{{question.option_1}}
+                    <input type="radio"                     
+                    name="radio"
+                    (click)="setValue(question , 'option_1')">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="label_div">{{question.option_2}}
+                    <input type="radio" 
+                           name="radio"
+                           (click)="setValue(question, 'option_2')">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="label_div">{{question.option_3}}
+                    <input type="radio" 
+                            name="radio"
+                            (click)="setValue(question, 'option_3')">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="label_div">{{question.option_4}}
+                    <input type="radio" 
+                            name="radio"
+                            (click)="setValue(question , 'option_4')">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="form-group text-center pt-5">
+                    <a (click)="submitQuestion()" class="btn-default main_btn submit_answer_btn">
+                      Submit Answer
+                    </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

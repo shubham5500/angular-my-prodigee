@@ -1,0 +1,99 @@
+.timer{
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: #7c7c7c;
+}
+.timer span img{
+    height: 35px;
+    margin-top: -4px;
+}
+.timer:not(.timer_img) span{
+    margin: 0 2px;
+}
+.subject_name p.m-0{
+    padding: 13px 10px 13px 40px;
+}
+.quiz_question{
+    min-height: 400px;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.17);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.padding_row{
+    padding-right: 90px;
+    padding-left: 15px;
+}
+.bookmark .col-md-12 span{
+    padding: 20px 15px 20px 15px;
+}
+.question_section .question p{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+.minute_span{
+    font-size: 22px;
+    font-weight: 400;
+    margin-left: 10px !important;
+}
+
+.submit_answer_btn{
+    padding: 11px 50px;
+}
+.mb-30{
+    margin-bottom: 30px;
+}
+
+.label_div {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    line-height: 22px;
+}
+.label_div input {
+    position: absolute;
+    opacity: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #797979;
+}
+
+.label_div input:checked ~ .checkmark {
+    background-color: #ffffff;
+    border: 2px solid #430d1b;
+    border-radius: 50%;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.label_div input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.label_div .checkmark:after {
+    top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #430d1b;
+}

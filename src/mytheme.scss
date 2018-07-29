@@ -1,0 +1,20 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$custom-primary: mat-palette($mat-grey , 300);
+$input-primary: mat-palette($mat-grey);
+$input-accent: mat-palette($mat-blue);
+$custom-accent : mat-palette($mat-red);
+$custom-theme: mat-light-theme($custom-primary , $custom-accent);
+$input-theme: mat-light-theme($input-primary ,$input-accent);
+.login_page_theme{
+    @include mat-button-theme($custom-theme);
+    @include mat-form-field-theme($input-theme);
+}
+
+$btn-primary: mat-palette($mat-grey , 900);
+$btn-accent: mat-palette($mat-red , A700);
+$btn-red-theme : mat-light-theme($btn-primary , $btn-accent);
+.danger_btn{
+    @include mat-button-theme($btn-red-theme);
+}

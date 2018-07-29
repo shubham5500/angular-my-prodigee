@@ -1,0 +1,4 @@
+.video_title{
+    max-width: 550px;
+    text-overflow: ellipsis;
+}

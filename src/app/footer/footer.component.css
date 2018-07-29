@@ -1,0 +1,24 @@
+footer.footer{
+	padding: 20px 0px;
+    background: #101010;
+    margin-top: 25px;
+    z-index: 10;
+    position: relative;
+}
+
+footer.footer div a{
+	color: grey;
+	font-size: 15px;
+}
+footer.footer div a:hover{
+	text-decoration: none;
+}
+footer.footer .col-md-5 .row:nth-child(1){
+	margin-left: 15px;
+} 
+.footer_link{
+	cursor: pointer;
+}
+.footer_link:hover{
+	color: white !important;
+}

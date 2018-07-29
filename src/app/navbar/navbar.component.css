@@ -1,0 +1,25 @@
+.mynavbar{
+	background: #430d1a;
+}
+.mynavbar a{
+	color: white;
+}
+.mynavbar .nav-item img{
+	height: 20px;
+}
+.mynavbar .navbar-brand{
+    font-weight: 300;
+    font-size: 22px;
+}    
+ul{
+	list-style-type: none !important;
+}
+.pl-25{
+	padding-left: 25px !important;
+}
+.navbar_toggle{
+	cursor: pointer;
+}
+.mynavbar .navbar-brand{
+	cursor: pointer;
+}
